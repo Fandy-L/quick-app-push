@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: quick-app
+  jpa:
+    database: mysql
+    show-sql: true
+    generate-ddl: true
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+#    hibernate:
+#      database-platform: org.hibernate.dialect.MySQL5Dialect
+#      ddl-auto: update
+
+
+  #配置redis
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    #连接超时ms
+    timeout: 5000
+
+#配置库
+datasource:
+  push:
+    jdbc-url: jdbc:mysql://127.0.0.1:3306/qapp?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 7758258
+
+  common:
+    jdbc-url: jdbc:mysql://127.0.0.1:3306/common?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 7758258
+
+server:
+  port: 8090
